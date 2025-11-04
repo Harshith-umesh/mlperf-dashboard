@@ -14,18 +14,18 @@ def get_app_css():
     .main > div {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        padding-top: 2.5rem !important;
+        padding-top: 0.5rem !important;
     }
     .block-container {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        padding-top: 2.5rem !important;
+        padding-top: 0.5rem !important;
         max-width: none !important;
     }
 
     /* Reduce header gap */
     .main .block-container {
-        padding-top: 2.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
     /* Reduce top padding on main content */
