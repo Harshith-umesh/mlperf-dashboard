@@ -1,7 +1,7 @@
 """MLPerf Inference Dashboard - Standalone Application.
 
 This dashboard provides comprehensive analysis and visualization of MLPerf Inference
-benchmark results across multiple versions (v4.1, v5.0, v5.1).
+benchmark results across multiple versions (v5.0, v5.1).
 """
 
 import streamlit as st
