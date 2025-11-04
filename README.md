@@ -2,7 +2,7 @@
 
 A comprehensive performance analysis dashboard for MLPerf Inference benchmark results. 
 
-## 🌟 Features
+##  Features
 
 ### Multi-Version Support
 - Compare MLPerf v5.0, v5.1 submissions
@@ -34,7 +34,7 @@ A comprehensive performance analysis dashboard for MLPerf Inference benchmark re
 - Track system performance evolution across MLPerf versions
 - Automatic identification of multi-version systems
 
-## 📂 Directory Structure
+##  Directory Structure
 
 ```
 mlperf-dashboard/
@@ -61,13 +61,13 @@ mlperf-dashboard/
     └── README.md
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Local Development
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Harshith-umesh/mlperf-dashboard.git
    cd mlperf-dashboard
    ```
 
@@ -110,7 +110,7 @@ pre-commit install
 - `make ci-local` - Run all CI checks locally
 - `make clean` - Clean temporary files
 
-## 📊 MLPerf Data Management
+##  MLPerf Data Management
 
 ### MLPerf CSV Files
 
@@ -152,7 +152,7 @@ python mlperf-data/original/generate_dataset_summaries.py
 
 See `mlperf-data/original/README.md` for detailed instructions.
 
-## 🧪 Testing
+##  Testing
 
 Run all tests:
 
@@ -172,7 +172,7 @@ Quick test:
 make test
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -185,7 +185,7 @@ make test
 - CSV files must include columns for model, scenario, organization, accelerator, and metrics
 - Dataset summaries require `input_length` and `output_length` columns
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature-name`
@@ -195,7 +195,7 @@ make test
 6. Run code quality checks: `make ci-local`
 7. Submit a pull request
 
-## 📋 Key Metrics Analyzed
+##  Key Metrics Analyzed
 
 - **Performance**: Samples/s, Tokens/s, Queries/s
 - **Normalization**: Per-GPU, Per-8-GPU-Node
@@ -203,7 +203,7 @@ make test
 - **Systems**: Multi-vendor, multi-accelerator comparison
 - **Dataset Statistics**: Token length distributions
 
-## 📄 License
+##  License
 
 Apache-2.0 License
 
