@@ -13,9 +13,11 @@ Each CSV file contains two columns:
 
 ### Available Datasets
 
-- `deepseek-r1.csv` - DeepSeek-R1 model evaluation dataset
-- `llama3-1-8b-datacenter.csv` - LLaMA 3.1 8B datacenter dataset
-- `llama2-70b-99.csv` - LLaMA 2 70B dataset (99% and 99.9% variants)
+- `deepseek-r1.csv` - DeepSeek-R1 model evaluation dataset (4,388 samples, 39KB)
+- `llama3-1-8b-datacenter.csv` - Llama 3.1 8B datacenter dataset (112KB)
+- `llama3-1-405b.csv` - Llama 3.1 405B dataset (8,313 samples, 78KB)
+- `llama2-70b-99.csv` - Llama 2 70B dataset (99% and 99.9% variants, 180KB)
+- `mixtral-8x7b.csv` - Mixtral 8x7B dataset (15,000 samples, 111KB)
 
 ## Generating Summaries
 

@@ -1,0 +1,50 @@
+FROM python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy only necessary application files
+COPY app.py .
+COPY dashboard_styles.py .
+COPY mlperf_datacenter.py .
+
+# Copy all MLPerf data (version CSV files and dataset summaries)
+COPY mlperf-data/ ./mlperf-data/
+
+RUN mkdir -p /app/.streamlit && \
+    chgrp -R 0 /app && \
+    chmod -R g=u /app
+
+# Expose port 8501
+EXPOSE 8501
+
+# Health check for OpenShift probes
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8501/_stcore/health || exit 1
+
+# Run as non-root
+USER 1001
+
+# Set environment variables and run the application
+ENV STREAMLIT_CONFIG_PATH=/app/.streamlit
+ENV STREAMLIT_SERVER_ENABLE_STATIC_SERVING=false
+ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+ENV STREAMLIT_SERVER_MAX_UPLOAD_SIZE=200
+CMD ["streamlit", "run", "app.py", \
+     "--server.port=8501", \
+     "--server.address=0.0.0.0", \
+     "--server.headless=true", \
+     "--server.enableCORS=false", \
+     "--server.enableXsrfProtection=false", \
+     "--server.runOnSave=true", \
+     "--server.allowRunOnSave=true"]
+
